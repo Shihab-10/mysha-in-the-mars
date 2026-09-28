@@ -92,7 +92,7 @@ function BoardingOverlay({ step }: any) {
     ["Hatch opening", "Access mechanism extended."],
     ["Entering spacecraft", "Transitioning to the crew cabin."],
   ];
-  const copy = stages[Math.min(step, stages.length - 1)];
+  const copy = stages[Math.min(step, stages.length - 1)]!;
   return (
     <div className="cinematic-caption">
       <span>Boarding sequence · {String(step + 1).padStart(2, "0")}</span>
@@ -149,8 +149,8 @@ function LaunchOverlay({ mission, actions }: any) {
       ) : (
         <div className="launch-status">
           <span>PROTOCOL B-612 launch sequence</span>
-          <strong>{titles[mission.phase][0]}</strong>
-          <p>{titles[mission.phase][1]}</p>
+          <strong>{titles[mission.phase]![0]}</strong>
+          <p>{titles[mission.phase]![1]}</p>
         </div>
       )}
       <Button variant="ghost" className="skip-button" onClick={actions.beginJourney}>Skip cinematic</Button>
