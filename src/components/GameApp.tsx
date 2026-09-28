@@ -134,6 +134,7 @@ export default function GameApp() {
       const timer = window.setTimeout(actions.beginJourney, 3200);
       return () => window.clearTimeout(timer);
     }
+    return undefined;
   }, [mission.phase, mission.countdown, actions, soundOn]);
 
   useEffect(() => {
