@@ -109,10 +109,10 @@ function PrepRoom({ mission, setNearby }: any) {
     walking.current = false;
     if (mission.phase === "preparation" && !mission.interactionLocked) {
       const keys = getKeys();
-      const up = keys.forward || touchMove.forward;
-      const backward = keys.backward || touchMove.backward;
-      const left = keys.left || touchMove.left;
-      const right = keys.right || touchMove.right;
+      const up = keys['forward'] || touchMove.forward;
+      const backward = keys['backward'] || touchMove.backward;
+      const left = keys['left'] || touchMove.left;
+      const right = keys['right'] || touchMove.right;
       forward.set(Math.sin(yaw.current), 0, Math.cos(yaw.current));
       side.set(forward.z, 0, -forward.x);
       temp.set(0, 0, 0);

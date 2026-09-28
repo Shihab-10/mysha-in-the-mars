@@ -134,11 +134,23 @@ export default function GameApp() {
       const timer = window.setTimeout(actions.beginJourney, 3200);
       return () => window.clearTimeout(timer);
     }
+    return undefined;
   }, [mission.phase, mission.countdown, actions, soundOn]);
 
   useEffect(() => {
     resetTouchMove();
   }, [mission.phase]);
+
+  /* Optional shortcut for testing/demos: /?level=2|3|4 jumps straight to a level. */
+  const jumped = useRef(false);
+  useEffect(() => {
+    if (jumped.current) return;
+    jumped.current = true;
+    const level = new URLSearchParams(window.location.search).get("level");
+    if (level === "2") { setIntro(false); actions.enterLevelTwo(); }
+    if (level === "3") { setIntro(false); actions.enterLevelThree(); }
+    if (level === "4") { setIntro(false); actions.enterLevelFour(); }
+  }, [actions]);
 
   useEffect(() => () => { if (noticeTimer.current !== undefined) window.clearTimeout(noticeTimer.current); }, []);
 

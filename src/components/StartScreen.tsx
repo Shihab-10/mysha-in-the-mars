@@ -90,8 +90,8 @@ export function IntroCinematic({ onDone }: { onDone: () => void }) {
       </Canvas>
       <div className="start-shade" />
       <div className="intro-caption" key={beat}>
-        <span>{BEATS[beat].kicker}</span>
-        <strong>{BEATS[beat].title}</strong>
+        <span>{BEATS[beat]!.kicker}</span>
+        <strong>{BEATS[beat]!.title}</strong>
       </div>
       <Button variant="ghost" className="intro-skip" onClick={onDone}>Skip intro</Button>
     </main>

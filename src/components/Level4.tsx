@@ -39,8 +39,8 @@ function useWalkKeys(onInteract: () => void) {
 function Habitat() {
   return (
     <group position={[0, 0, 7.5]}>
-      <mesh position={[0, 1.8, 0]} castShadow>
-        <capsuleGeometry args={[2.6, 4.4, 8, 24]} rotation={[0, 0, Math.PI / 2]} />
+      <mesh position={[0, 1.8, 0]} rotation={[0, 0, Math.PI / 2]} castShadow>
+        <capsuleGeometry args={[2.6, 4.4, 8, 24]} />
         <meshStandardMaterial color="#d7dedb" metalness={0.25} roughness={0.55} />
       </mesh>
       <mesh position={[0, 1.3, -2.9]}>

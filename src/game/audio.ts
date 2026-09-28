@@ -65,6 +65,6 @@ export class AudioManager {
       alert: () => { this.tone(520, 0.2, "square", 0.14, -120); this.tone(300, 0.3, "square", 0.1, -80); },
       complete: () => { this.tone(320, 0.3, "sine", 0.24, 260); this.tone(520, 0.4, "sine", 0.2, 320); this.tone(760, 0.5, "triangle", 0.14, 180); },
     };
-    (sounds[name] || sounds.confirmed)();
+    (sounds[name] ?? sounds['confirmed']!)();
   }
 }

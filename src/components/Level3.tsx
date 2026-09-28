@@ -315,7 +315,7 @@ export function Level3({ mission, actions, soundOn, onToggleSound, playSound }: 
     if (mission.phase === "landing" && mission.exitStep === 3) playSound("hatch");
   }, [mission.phase, mission.exitStep, playSound]);
 
-  const guide = GUIDE.find((g) => tel.altitude >= g.min) ?? GUIDE[GUIDE.length - 1];
+  const guide = (GUIDE.find((g) => tel.altitude >= g.min) ?? GUIDE[GUIDE.length - 1])!;
   const zone = LANDING_ZONES.find((z) => z.id === (tel.zone ?? mission.selectedZone));
   const descending = mission.phase === "level3";
 

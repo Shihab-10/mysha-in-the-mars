@@ -194,7 +194,7 @@ export function missionReducer(state: MissionState, action: any): MissionState {
     case "SELECT_ZONE":
       return { ...state, selectedZone: action.id };
     case "LANDED": {
-      const zone = LANDING_ZONES.find((z) => z.id === state.selectedZone) ?? LANDING_ZONES[0];
+      const zone = LANDING_ZONES.find((z) => z.id === state.selectedZone) ?? LANDING_ZONES[0]!;
       return withLog(
         {
           ...state,
