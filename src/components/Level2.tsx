@@ -139,7 +139,7 @@ function CabinScene({ mission }: any) {
       <Station position={[2.1, 0, -1.2]} label="EMERGENCY O2" color={mission.emergencyOxygen ? "#5fe6d2" : "#e7b85e"} alert={alarm && mission.leakStep === 1} />
       <Station position={[0, 0, -2.3]} label="POWER" color={mission.lifeSupportPowered ? "#5fe6d2" : "#7fb6ff"} alert={alarm && mission.leakStep === 2} />
       <Station position={[4.3, 0, 0.6]} label="WATER" color="#7fd8ff" alert={false} />
-      <Station position={[-4.3, 0, 0.6]} label="FOOD" color="#d7b externally" alert={false} />
+      <Station position={[-4.3, 0, 0.6]} label="FOOD" color="#d7b36a" alert={false} />
 
       <LeakJet active={alarm} />
       <Astronaut rigRef={astronaut} suited walking={false} reaching={alarm} />
